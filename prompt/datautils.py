@@ -80,8 +80,8 @@ def get_wikitext2(nsamples, seed, seqlen, model, llama=False, return_tokenizer=F
 
 def get_ptb(nsamples, seed, seqlen, model, llama=False, return_tokenizer=False):
     from datasets import load_dataset
-    traindata = load_dataset('ptb_text_only', 'penn_treebank', split='train')
-    valdata = load_dataset('ptb_text_only', 'penn_treebank', split='validation')
+    traindata = load_dataset('ptb_text_only', 'penn_treebank', split='train', trust_remote_code=True)
+    valdata = load_dataset('ptb_text_only', 'penn_treebank', split='validation', trust_remote_code=True)
 
     if llama:
         from transformers import LlamaTokenizer
@@ -163,8 +163,8 @@ def get_c4(nsamples, seed, seqlen, model, llama=False, return_tokenizer=False):
 
 def get_ptb_new(nsamples, seed, seqlen, model, llama=False, return_tokenizer=False):
     from datasets import load_dataset
-    traindata = load_dataset('ptb_text_only', 'penn_treebank', split='train')
-    testdata = load_dataset('ptb_text_only', 'penn_treebank', split='test')
+    traindata = load_dataset('ptb_text_only', 'penn_treebank', split='train', trust_remote_code=True)
+    testdata = load_dataset('ptb_text_only', 'penn_treebank', split='test', trust_remote_code=True)
 
     if llama:
         from transformers import LlamaTokenizer
