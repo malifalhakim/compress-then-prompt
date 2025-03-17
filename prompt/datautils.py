@@ -54,7 +54,8 @@ def get_wikitext2(nsamples, seed, seqlen, model, llama=False, return_tokenizer=F
     traindata = load_dataset('wikitext', 'wikitext-2-raw-v1', split='train')
     testdata = load_dataset('wikitext', 'wikitext-2-raw-v1', split='test')
     if llama:
-        tokenizer = llama_loader.LLaMATokenizer.from_pretrained(model, use_fast=False)
+        from transformers import LlamaTokenizer
+        tokenizer = LlamaTokenizer.from_pretrained(model, use_fast=False)
     else:
         from transformers import AutoTokenizer 
         tokenizer = AutoTokenizer.from_pretrained(model, use_fast=False)
@@ -83,7 +84,8 @@ def get_ptb(nsamples, seed, seqlen, model, llama=False, return_tokenizer=False):
     valdata = load_dataset('ptb_text_only', 'penn_treebank', split='validation')
 
     if llama:
-        tokenizer = llama_loader.LLaMATokenizer.from_pretrained(model, use_fast=False)
+        from transformers import LlamaTokenizer
+        tokenizer = LlamaTokenizer.from_pretrained(model, use_fast=False)
     else:
         from transformers import AutoTokenizer 
         tokenizer = AutoTokenizer.from_pretrained(model, use_fast=False)
@@ -115,7 +117,8 @@ def get_c4(nsamples, seed, seqlen, model, llama=False, return_tokenizer=False):
     )
 
     if llama:
-        tokenizer = llama_loader.LLaMATokenizer.from_pretrained(model, use_fast=False)
+        from transformers import LlamaTokenizer
+        tokenizer = LlamaTokenizer.from_pretrained(model, use_fast=False)
     else:
         from transformers import AutoTokenizer 
         tokenizer = AutoTokenizer.from_pretrained(model, use_fast=False)
@@ -164,7 +167,8 @@ def get_ptb_new(nsamples, seed, seqlen, model, llama=False, return_tokenizer=Fal
     testdata = load_dataset('ptb_text_only', 'penn_treebank', split='test')
 
     if llama:
-        tokenizer = llama_loader.LLaMATokenizer.from_pretrained(model, use_fast=False)
+        from transformers import LlamaTokenizer
+        tokenizer = LlamaTokenizer.from_pretrained(model, use_fast=False)
     else:
         from transformers import AutoTokenizer 
         tokenizer = AutoTokenizer.from_pretrained(model, use_fast=False)
