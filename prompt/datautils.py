@@ -196,7 +196,8 @@ def get_c4_new(nsamples, seed, seqlen, model, llama=False, return_tokenizer=Fals
     )
 
     if llama:
-        tokenizer = llama_loader.LLaMATokenizer.from_pretrained(model, use_fast=False)
+        from transformers import LlamaTokenizer
+        tokenizer = LlamaTokenizer.from_pretrained(model, use_fast=False)
     else:
         from transformers import AutoTokenizer 
         tokenizer = AutoTokenizer.from_pretrained(model, use_fast=False)
