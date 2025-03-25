@@ -24,14 +24,6 @@ def setup_package():
           'Programming Language :: Python :: 3',
       ],
       cmdclass={"build_ext": BuildExtension},
-    #   install_requires=[
-    #     'datasets==1.6.2',
-    #     'scikit-learn==0.24.2',
-    #     'tensorboard==2.5.0',
-    #     'matplotlib==3.4.2',
-    #     'transformers==4.6.0',
-    #     'numpy==1.21.1'
-    #   ],
   )
 
 
